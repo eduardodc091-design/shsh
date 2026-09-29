@@ -1,0 +1,84 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    overflow: hidden; 
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #ffb6c1, #ffc0cb, #ffe4e1, #ff69b4);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Pantalla de inicio para activar el audio */
+.start-screen {
+    position: absolute; z-index: 50; text-align: center;
+    transition: opacity 0.5s ease;
+}
+.start-screen h2 {
+    color: white; font-family: 'Caveat', cursive; font-size: 3rem;
+    margin-bottom: 20px; text-shadow: 0 5px 15px rgba(255, 77, 109, 0.6);
+}
+#btn-start { background: #ff4d6d; color: white; padding: 15px 30px; font-size: 1.2rem; }
+#btn-start:hover { transform: scale(1.1); box-shadow: 0 10px 20px rgba(255, 77, 109, 0.5); }
+
+/* Tarjetas de Cristal */
+.card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 30px; padding: 40px 30px;
+    width: 90%; max-width: 450px;
+    text-align: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    z-index: 10; transition: opacity 0.8s ease, transform 0.8s ease;
+    position: absolute; /* Para que ocupen el mismo lugar al cambiar */
+}
+
+/* Tarjeta más grande para el monólogo */
+.intro-large {
+    max-width: 550px !important;
+    padding: 30px 40px !important;
+}
+
+.hidden { opacity: 0 !important; pointer-events: none; transform: scale(0.9); z-index: -1; }
+
+.illustration img {
+    width: 150px; height: 150px; object-fit: cover; 
+    border-radius: 20px; margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+h1 { font-family: 'Caveat', cursive; font-size: 2.8rem; color: #d6336c; line-height: 1.2; margin-bottom: 10px; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+p { font-size: 1rem; color: #5a4b56; margin-bottom: 30px; }
+
+/* Estilos para los chistes automáticos */
+#comedy-club {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-top: 10px;
+}
+#comedy-club p {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem; color: #5a4b56;
+    margin: 0; line-height: 1.2;
+    opacity: 0; transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#comedy-club p.visible { opacity: 1; transform: translateY(0); }
+#comedy-club p.punchline { color: #ff3355; font-size: 1.8rem; font-weight: bold; }
+
+.buttons-container { position: relative; display: flex; justify-content: space-around; align-items: center; height: 60px; width: 100%; }
+button { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1rem; padding: 12px 25px; border-radius: 30px; border: none; cursor: pointer; transition: all 0.2s ease; }
+#btn-yes { background: #ff4d6d; color: white; box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4); z-index: 5; }
+#btn-yes:hover { transform: scale(1.1); background: #ff3355; box-shadow: 0 8px 20px rgba(255, 77, 109, 0.6); }
+#btn-no { background: #ffffff; color: #ff4d6d; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); z-index: 9999; }
+
+.falling-heart { position: absolute; top: -10vh; font-size: 1.5rem; animation: fall linear forwards; z-index: 1; }
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }

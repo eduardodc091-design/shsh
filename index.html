@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tengo una pregunta para ti... 🐻💛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background-hearts"></div>
+
+    <!-- PANTALLA DE INICIO (Necesaria para que el audio funcione) -->
+    <div class="start-screen" id="start-screen">
+        <h2>Tienes un mensaje nuevo 💌</h2>
+        <button id="btn-start">Abrir mensaje</button>
+    </div>
+
+    <!-- EL SHOW DE COMEDIA (Automático y más grande) -->
+    <div class="card intro-large hidden" id="intro-card">
+        <div class="illustration">
+            <img src="comediante.gif" alt="Osito tierno" id="cute-bear">
+        </div>
+        <!-- Aquí aparecerán los textos solos -->
+        <div id="comedy-club"></div>
+    </div>
+
+    <!-- EL PLATO PRINCIPAL (Oculto al inicio) -->
+    <div class="card hidden" id="main-card">
+        <div class="illustration">
+            <!-- Usa tu imagen local si hiciste la Opción 2 -->
+            <img src="rogando.gif" alt="Osito tierno" id="cute-bear">
+        </div>
+        
+        <h1 id="question-title">¿Me concederías el honor de tener una cita conmigo?</h1>
+        <p id="question-desc">Prometo que será un día súper lindo, lleno de risas y momentos bonitos. 🥺</p>
+        
+        <div class="buttons-container">
+            <button id="btn-yes">¡Sí, me encantaría!</button>
+            <button id="btn-no">No, gracias</button>
+        </div>
+    </div>
+
+    <audio id="audioFondo" loop src="Coleccionista_de_Canciones.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
